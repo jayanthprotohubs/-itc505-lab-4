@@ -1,67 +1,121 @@
 /* Enhanced style.css */
 
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400&family=Montserrat:wght@500&display=swap');
+
 /* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out; /* Smooth transition for all hover effects */
 }
 
 body {
-    font-family: 'Nunito', sans-serif; /* A more modern, rounded font for a softer reading experience */
+    font-family: 'Open Sans', sans-serif; /* General font for the body */
     line-height: 1.7;
-    color: #3a3a3a; /* A softer color for reading, less harsh than pure black */
-    background-color: #f0f0f0; /* Soft background color for a pastel, modern look */
-    padding-top: 100px; /* Increased space for a larger header */
+    color: #333;
+    background: linear-gradient(to right, #ffffff, #f3f3f3); /* Subtle gradient for the background */
+    padding-top: 100px;
 }
 
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #009688; /* A fresh main color instead of the classic green, for a more modern, vibrant look */
+    background: linear-gradient(to right, #6441a5, #2a0845); /* Gradient background for header */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure header stays on top */
 }
 
 header h1 {
+    font-family: 'Montserrat', sans-serif; /* Special font for the main title */
     font-size: 2.5em;
-    font-weight: 700; /* Bold font weight makes the title more prominent */
+    font-weight: 700;
 }
 
 main {
-    padding: 50px 20px; /* More breathing room for the content */
+    padding: 50px 20px;
 }
 
 h2 {
+    font-family: 'Roboto', sans-serif; /* Different font for section headings */
     font-size: 2em;
-    color: #009688; /* Echoing the header color to tie the design together */
-    margin: 20px 0; /* More vertical spacing around headings */
+    color: #6441a5; /* Using color from the header gradient */
+    margin: 20px 0;
     padding-bottom: 5px;
-    border-bottom: 2px solid #009688; /* Thicker, colored bottom border for more emphasis */
-    font-weight: 600; /* Slightly less bold than the title for hierarchy */
+    border-bottom: 3px solid #6441a5; /* Echoing the header color */
+    font-weight: 700; /* Bold for more emphasis */
 }
 
 h3 {
+    font-family: 'Montserrat', sans-serif; /* Keeping consistency with the main title */
     font-size: 1.5em;
-    color: #4f4f4f; /* Darker than the text for contrast and readability */
-    margin: 15px 0; /* Standard spacing around subheadings */
-    font-weight: 600; /* Consistency in boldness with other headings */
+    color: #333;
+    margin: 15px 0;
+    font-weight: 600;
+    text-decoration: underline; /* Adding emphasis to subheadings */
 }
 
 section {
-    margin-bottom: 50px; /* More space between sections for a cleaner layout */
-    background: #ffffff; /* A white background for each section, making them distinct */
-    padding: 20px; /* Internal spacing for better readability */
-    border-radius: 8px; /* Rounded corners for a softer, modern look */
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1); /* Box shadows to create a "card" effect */
+    margin-bottom: 50px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+section:hover {
+    transform: scale(1.02); /* Slightly enlarging sections on hover for interactivity */
 }
 
 article {
     margin-top: 20px;
 }
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(to right, #2a0845, #6441a5); /* Same gradient as header for consistency */
+    color: #fff;
+}
+
+aside#addendum {
+    background-color: #f7f7f7;
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 3px solid #6441a5;
+}
+
+aside#addendum h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2a0845; /* Darker color for contrast */
+}
+
+aside#addendum p {
+    color: #555;
+    font-size: 1em;
+}
+
+/* Custom styles for the ordered list */
+ol {
+    border-left: 4px solid #6441a5; /* Adding a thematic left border */
+    background-color: #f4f4f4; /* Slightly different background for contrast */
+    padding: 15px;
+    border-radius: 5px; /* Rounded corners for the list */
+}
+
+ol li {
+    margin-bottom: 10px; /* Space between list items */
+    font-style: italic; /* Italicize the content to differentiate from other text */
+}
+
+/* Responsive design elements and other specific styles can be added as needed */
+
 /* Table Styles */
 table {
     border-collapse: collapse;
@@ -99,29 +153,3 @@ tr:last-child td {
 }
 
 
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    background: #2c3e50; /* A darker color for the footer to anchor the page visually */
-    color: #fff;
-}
-
-aside#addendum {
-    background-color: #f7f7f7; /* A slightly different shade than the main background for subtle emphasis */
-    padding: 30px;
-    margin-top: 30px;
-    border-top: 3px solid #009688; /* A thematic touch to tie back to the header/footer */
-}
-
-aside#addendum h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #2c3e50; /* Darker color for contrast */
-}
-
-aside#addendum p {
-    color: #555; /* Standard, readable text color */
-    font-size: 1em;
-}
-
-/* Responsive design elements and other specific styles can be added as needed */
