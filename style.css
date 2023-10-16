@@ -1,0 +1,127 @@
+/* Enhanced style.css */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif; /* A more modern, rounded font for a softer reading experience */
+    line-height: 1.7;
+    color: #3a3a3a; /* A softer color for reading, less harsh than pure black */
+    background-color: #f0f0f0; /* Soft background color for a pastel, modern look */
+    padding-top: 100px; /* Increased space for a larger header */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #009688; /* A fresh main color instead of the classic green, for a more modern, vibrant look */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700; /* Bold font weight makes the title more prominent */
+}
+
+main {
+    padding: 50px 20px; /* More breathing room for the content */
+}
+
+h2 {
+    font-size: 2em;
+    color: #009688; /* Echoing the header color to tie the design together */
+    margin: 20px 0; /* More vertical spacing around headings */
+    padding-bottom: 5px;
+    border-bottom: 2px solid #009688; /* Thicker, colored bottom border for more emphasis */
+    font-weight: 600; /* Slightly less bold than the title for hierarchy */
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #4f4f4f; /* Darker than the text for contrast and readability */
+    margin: 15px 0; /* Standard spacing around subheadings */
+    font-weight: 600; /* Consistency in boldness with other headings */
+}
+
+section {
+    margin-bottom: 50px; /* More space between sections for a cleaner layout */
+    background: #ffffff; /* A white background for each section, making them distinct */
+    padding: 20px; /* Internal spacing for better readability */
+    border-radius: 8px; /* Rounded corners for a softer, modern look */
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1); /* Box shadows to create a "card" effect */
+}
+
+article {
+    margin-top: 20px;
+}
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+th, td {
+    padding: 8px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Remove border for the last row */
+tr:last-child td {
+    border-bottom: none;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #2c3e50; /* A darker color for the footer to anchor the page visually */
+    color: #fff;
+}
+
+aside#addendum {
+    background-color: #f7f7f7; /* A slightly different shade than the main background for subtle emphasis */
+    padding: 30px;
+    margin-top: 30px;
+    border-top: 3px solid #009688; /* A thematic touch to tie back to the header/footer */
+}
+
+aside#addendum h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2c3e50; /* Darker color for contrast */
+}
+
+aside#addendum p {
+    color: #555; /* Standard, readable text color */
+    font-size: 1em;
+}
+
+/* Responsive design elements and other specific styles can be added as needed */

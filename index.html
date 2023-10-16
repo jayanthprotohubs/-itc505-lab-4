@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Comparative Study of Clustering Algorithms</title>
+</head>
+<body>
+
+    <header>
+        <h1>A Comparative Study of Clustering Algorithms in Machine Learning</h1>
+    </header>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            Clustering or Cluster Analysis is a data mining
+technique or machine language algorithm which is used
+to divide the objects into groups according to the
+similarity between them. The result of the cluster
+analysis is to get a different group of objects called
+clusters. Objects within a cluster are similar to each
+other and dissimilar to other objects in another cluster [
+1, 2 ] . This similarity and distinct measures between
+clusters is determined using Euclidean Distance, Cosine
+Similarity, Manhattan Distance and Jaccard similarity[ 3 ]
+based on the data objects the problem involves with.
+Clustering is used in many fields of study which includes
+statistics, data mining, Machine Learning, Artificial
+Intelligence etc.
+        </section>
+
+        <section id="types-of-clustering">
+            <h2>Types of Clustering Methods</h2>
+            Generally, all algorithms can be categorised into two
+broad categories : 1. Partitioning and 2. Hierarchical
+based on the properties of the clusters.Various
+algorithms which have been proposed may follow
+different methodology hence it is difficult to categorie
+them within these two categories.Detailed categorisation
+of the clustering algorithms is given in [ 1 , 2 ]. Following
+section provides a brief view of some very well known
+methods.
+        </section>
+
+        <section id="partitioning-method">
+            <h2>Partitioning Method</h2>
+            As the name suggests, this method divides the
+dataset into K partitions containing N objects, where K is
+always lesser than or equal to the number of objects,
+data is divided into partitions on some evaluation
+criteria.Partition can be made by various approaches but
+checking all of them is not feasible. Hence one of the
+greedy methods is used. 
+            <article id="k-means">
+                <h3>K-means</h3>
+                The partition algorithm in which each cluster is
+represented by the magnitude of their centres is known
+as K-means algorithm. It is one of the simplest
+unsupervised clustering algorithms. In this algorithm, the number of clusters for which the dataset to be
+grouped is to be known in advance. K-means is an
+iterative algorithm where it tries to divide the objects
+into K partitions given that K is lesser than or equal to
+the N number of objects in the dataset. The basic
+algorithm is very simple :-
+<ol>
+    <li> Assign all the objects associated with the closest
+centroid.</li> <li>Compute the new centroid by calculating the
+mean of all the objects associated with that
+particular centroid.</li>
+<li>Repeat step 1 and step 2 until there is no
+change.</li>
+</ol>
+
+Drawback of the K-means algorithms is with the smaller
+samples of the datasets the algorithm fails to cluster data
+accurately. It also fails for categorical data. Also if there
+exists datas which are highly overlapping then the
+algorithm fails to resolve them into clusters distinctly.
+Some examples under the K-means method are :- Kmeans , bisecting K-means method. 
+            </article>
+            <article id="k-medoids">
+                <h3>K-medoids</h3>
+                The partitioning algorithm in which the cluster is
+represented by one of the objects located near its centre
+is called k-medoids. Medoids are defined by the location
+of predominant fraction of points inside the cluster
+which makes it less sensitive to the presence of outliers
+in the data. The clusters are defined as a subset of points
+close to their respective medoids and the objective
+function is defined as the average distance between the
+medoids and the points or any other similarity function
+is used based on the type of dataset.
+K-medoids method is not suitable for clustering nonspherical object groups because this method relies on
+minimizing the distance between the non medoids
+objects and mediod of the cluster. It groups based on the
+closeness rather than the connectivity between objects.
+Some of the most common algorithms under K-medoids
+method are : CLARA ( Clustering LARge Applications) ,
+CLARANS ( Clustering Large Applications using
+RANdomised Search) and PAM ( partitioning Around
+Medoids )
+            </article>
+        </section>
+
+        <section id="hierarchical-method">
+            <h2>Hierarchical Method</h2>
+            In this method, it tries to group the object by
+decomposing the dataset into a group hierarchy. The
+decomposition is done by constructing a tree of data
+objects by their similarities. Hierarchical method iteratively merges clusters either into a single cluster or
+to different individual nodes. Dendrogram is used as a
+diagrammatic representation of the connection between
+the data objects and is used to determine the number of
+clusters which is done by cutting the dendrogram at a
+similarity measure [ 7 ]. Distances between the data
+objects are calculated using Euclidean distance or
+Manhattan distance. The distances can be calculated
+using single, average or complete linkage. When the
+distance between two points in a cluster is defined by
+the shortest distance is single linkage. When the distance
+is greatest between the two points in a cluster is called
+complete linkage. Similarly when the distance between
+two clusters is defined as the average distance between
+each point in one cluster to every point in another
+cluster is average linkage [ 8 ]. Single linkage suffers
+from chaining while the complete linkage suffers from
+crowding. As to what kind of linkage to be chosen should
+be entirely based on the type and complexity of data
+objects.
+            <article id="agglomerative">
+                <h3>Agglomerative Hierarchical Method</h3>
+                The Bottom up method is called agglomerative
+hierarchical clustering method. Each data point is
+considered as a single cluster and it merges the clusters
+based on the similarity between individual clusters until
+all the data objects are constructed under a single
+cluster. For N data objects , N * N distance matrix is
+created, then the basic algorithm for the method can be
+described as follows :-
+<ol>
+    <li>Initialise the method with N clusters, where each individual object is considered as a cluster. Then calculate the initial similarities between the cluster and store it in the matrix.</li>
+    <li>Determine a pair of clusters based on the distance between them, unify two clusters which have minimum distance. Now the unified pair of clusters is considered a single cluster.</li>
+    <li>Calculate the similarities between the cluster which was newly formed to the priory available clusters and store it into the matrix.</li>
+    <li>Repeat steps 2 and 3 until all data objects are merged into a single cluster consisting of N data objects. [ 9 ]</li>
+</ol>
+Complexity of the Agglomerative method is O(n3) in
+general, but we can reduce the complexity to O(n2 logn)
+if we use priority Queue.
+
+            </article>
+            <article id="divisive">
+                <h3>Divisive Hierarchical Method</h3>
+                In this method hierarchical trees are
+constructed using a top down approach for the data points. All the data objects are considered as a single
+cluster initially and then the clusters are divided until all
+the data objects are considered as a single individual
+cluster. This method is much more complex than the
+Agglomerative method because a second method is
+required for dividing the clusters. Since there are 2N-1 - 1
+ways to divide a group of N clusters into individual
+clusters, it is computationally not feasible for finding the
+optimal solution for dividing the clusters, hence one of
+the heuristic approaches is used. In most of the cases Kmeans or bisecting K-means algorithms are used for
+dividing the clusters. Another one of the strategies which
+can be used is by constructing a dissimilarity graph using
+a minimum spanning tree and then by making a new
+cluster by breaking down the connections between the
+largest dissimilarity
+Algorithm of Divisive hierarchical method is as follows :-
+<ol>
+    <li>Intialise the process by making a single cluster containing all the objects.</li>
+    <li>Choose a cluster with the largest diameter.</li>
+    <li>Detect the objects in the cluster chosen in step 2 with the minimum average similarity to all the other objects in the same cluster.</li>
+    <li>The object which was detected in step 3 is the element which will be added to the fragment group.</li>
+    <li>Detect the object in the original group which shows the highest average similarity with the objects in the fragment group.</li>
+    <li>If the average similarity for the detected object in step 5 is greater for the fragment group than the original group, then assign the object to the fragment group and go to step 5; otherwise, do nothing.</li>
+    <li>Repeat step 2 - step 6 until each data point is considered as a single cluster.</li>
+</ol>
+
+Complexity of this method with exhaustive search is O(
+2N ) but various heuristics used in the second method
+result in varying complexity.
+Hierarchical methods can suffer from noise and outliers
+present in the objects, it also struggles in handling
+different sized clusters and convex shapes of the objects.
+Some of the examples of Hierarchical methods are :-
+BIRCH, ROCK, CURE, Chameleon, AGNES, DIANA etc.
+            </article>
+        </section>
+
+       
+
+        <section id="comparative-analysis">
+            <h2>Comparative Analysis</h2>
+            As mentioned before Clustering is a more
+difficult task than one of classification. The problems
+which are posed such as High dimension of the data,
+computational complexity, noise present in the data,
+scalability etc. Numerous algorithms have been
+proposed to overcome the problems but no one
+algorithm can tackle all on its own. First, detailed
+properties of some of the popular algorithms have been
+given in Table 1. Then we have taken 5 datasets with
+numerical values, where classification needed is taken:
+Iris plant Classification, Glass identification images,
+Image segmentation, Parkinson’s disease detection and
+Breast cancer detection datasets.
+All the datasets were taken from UCI Machine Learning
+Repository.
+We have referenced various research papers
+and made a table consisting of the algorithm name, Time
+Complexity of the algorithm, whether the algorithm is
+capable of handling outliers, and what are the input
+parameters required for the algorithm when the
+algorithm was first proposed, which can help the users
+in selecting the Clustering algorithm.
+The information can be seen in Table.1. named
+description of the clustering algorithms below.
+<table border="1">
+    <caption>Table.1. Description of the clustering algorithms.</caption>
+    <thead>
+        <tr>
+            <th>Algorithm Name</th>
+            <th>Time Complexity</th>
+            <th>Outlier</th>
+            <th>Input Parameter</th>
+            <th>Proposed year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>K-Means</td>
+            <td>O(n)</td>
+            <td>No</td>
+            <td>Number of clusters</td>
+            <td>1955</td>
+        </tr>
+        <tr>
+            <td>CLARANS</td>
+            <td>O(n<sup>2</sup>)</td>
+            <td>Yes</td>
+            <td>Number of clusters, Number of Local Minima, Max number of neighbour</td>
+            <td>1994</td>
+        </tr>
+        <tr>
+            <td>EM</td>
+            <td>O(n)</td>
+            <td>No</td>
+            <td>Number of components</td>
+            <td>1977</td>
+        </tr>
+        <tr>
+            <td>PAM</td>
+            <td>O(n<sup>2</sup>)</td>
+            <td>Yes</td>
+            <td>Number of clusters</td>
+            <td>1990</td>
+        </tr>
+        <tr>
+            <td>Agglomerative</td>
+            <td>O(n<sup>2</sup>)</td>
+            <td>No</td>
+            <td>Number of clusters</td>
+            <td>1963</td>
+        </tr>
+    </tbody>
+</table>
+
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    <!-- Addendum -->
+    <aside id="addendum">
+        <h2>Addendum: Design Choices Explanation</h2>
+        <p>
+            <strong>Font Choice:</strong> The 'Nunito' font was chosen for its clean, friendly appearance, bringing a touch of modern sophistication and readability. Its rounded, sans-serif characters offer a smooth reading experience, making it ideal for digital screens and long reading sessions.
+        </p>
+        <p>
+            <strong>Color Palette:</strong> The color scheme was revamped to be more engaging and modern. The teal color (#009688) is used for headers and critical borders, providing a vibrant, consistent theme that's visually appealing and keeps the reader's attention. This fresh hue is balanced by softer background shades (#f0f0f0 and #ffffff) and darker text (#3a3a3a and #4f4f4f) for contrast and readability.
+        </p>
+        <p>
+            <strong>Text Hierarchy and Sizes:</strong> Heading sizes were adjusted to establish a clear, visual hierarchy, with a bold, 2.5em title at the top. Section headings and subheadings are slightly smaller but maintain prominence through bold weighting and consistent teal coloring, guiding readers through the content structure.
+        </p>
+        <p>
+            <strong>Interactive Elements:</strong> The modernized design introduces interactive depth with box-shadow effects, making the sections appear as floating cards. This subtle choice enhances the user experience by providing a 3D space feeling, making the interaction more tactile and engaging.
+        </p>
+        <p>
+            <strong>Spacing and Separation:</strong> Generous padding inside each section and margin between sections create a breathable layout, preventing information overload. The use of border-bottom on headings helps define the start of each new topic clearly, making transitions smoother for readers.
+        </p>
+        <p>
+            <strong>Footer Contrast:</strong> A darker footer (#2c3e50) helps anchor the content visually, creating a definitive end to the page. The contrast ensures that navigational or ancillary information here is accessible but distinct from the main content.
+        </p>
+        <p>
+            <strong>Overall Creativity:</strong> The design choices collectively contribute to a webpage that is not only informative but also a pleasure to navigate. The creative use of color, shadow, and text styling transforms a standard document into an interactive experience, encouraging readers to engage more deeply with the content.
+        </p>
+    </aside>
+    
+
+</body>
+</html>
